@@ -1,0 +1,71 @@
+[System]
+Name='FISPertimbanganGaji'
+Type='mamdani'
+Version=2.0
+NumInputs=3
+NumOutputs=3
+NumRules=11
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='HasilKerja'
+Range=[0 15]
+NumMFs=3
+MF1='Buruk':'gaussmf',[4 0]
+MF2='Bagus':'gaussmf',[1.857 7.5]
+MF3='Memuaskan':'gaussmf',[4 15]
+
+[Input2]
+Name='JamKerja'
+Range=[0 15]
+NumMFs=2
+MF1='Standar':'trimf',[-6 0 10.54]
+MF2='Lembur':'trimf',[4.56 14.9801587301587 16.6]
+
+[Input3]
+Name='PengalamanKerja'
+Range=[0 15]
+NumMFs=3
+MF1='Trainee':'trimf',[0 2.5 5]
+MF2='Tetap':'trimf',[5 7.5 10]
+MF3='Veteran':'trimf',[10 12.5 15]
+
+[Output1]
+Name='Bonus'
+Range=[0 15]
+NumMFs=3
+MF1='Sedikit':'trimf',[0 2.5 5]
+MF2='Sedang':'trimf',[5 7.5 10]
+MF3='Banyak':'trimf',[10 12.5 15]
+
+[Output2]
+Name='Reputasi'
+Range=[0 15]
+NumMFs=2
+MF1='Jelek':'trimf',[0 0 12]
+MF2='Bagus':'trimf',[3 15 21]
+
+[Output3]
+Name='NaikGaji'
+Range=[0 15]
+NumMFs=3
+MF1='Tidak':'gaussmf',[3 1.04e-16]
+MF2='Dipertimbangkan':'gaussmf',[1 7.5]
+MF3='Ya':'gaussmf',[3 15]
+
+[Rules]
+1 1 1, 0 1 0 (1) : 1
+3 2 2, 3 2 3 (1) : 1
+2 0 2, 2 0 0 (1) : 1
+3 2 3, 3 2 3 (1) : 1
+1 1 0, 0 0 1 (1) : 1
+3 0 1, 2 0 0 (1) : 1
+1 1 0, 1 1 1 (1) : 1
+3 2 1, 2 2 0 (1) : 1
+1 2 0, 1 1 1 (1) : 1
+2 1 2, 2 2 2 (1) : 1
+2 1 3, 3 2 2 (1) : 1

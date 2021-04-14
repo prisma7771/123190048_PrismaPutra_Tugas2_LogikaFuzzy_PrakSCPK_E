@@ -1,0 +1,6 @@
+Perusahaan A akan memberikan gaji kepada karyawannya setiap bulannya berdasarkan performa pekerjanya. 
+Dilihat dari hasil kerja, jam kerja, dan lama ia bekerja di perusahaan, 
+maka perusahaan dapat menilai performa nya baik atau buruk sehingga bisa dipercaya dengan tanggungjawab lebih besar, berapa bonus yang ia dapat, ataupun kenaikan gaji bagi pekerja tersebut.
+Oleh karena itu, dibuatlah logika Fuzzy untuk membantu perusahaan dengan 3 buah input dan 3 buah output, yaitu:
+Input: Hasil Kerja, Jam Kerja, dan lama ia bekerja di perusahaan
+Output: Bonus, Reputasi, dan apakah  pekerja itu layak mendapat Kenaikan Gaji.
